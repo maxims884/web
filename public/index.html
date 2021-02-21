@@ -1,43 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+<style>
+.film {
+    display: inline-block;
+    margin: 20px;
+    border: 10px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    width: 120px;
+    padding: 10px;
+}
+</style>
+
+
+<script type="text/babel">
+    function Film(props) {
+       return React.createElement('div', null,
+    React.createElement('img',{ src : props.img},null),
+    React.createElement('h2', null, props.name),
+    React.createElement('p', null, `Год: ${props.year}`)
+);
+
+    }
+
+    const p1 = document.getElementById('p1');
+    const p2 = document.getElementById('p2');
+	const p3 = document.getElementById('p3');
+	const p4 = document.getElementById('p4');
+	const p5 = document.getElementById('p5');
+	const p6 = document.getElementById('p6');
+	const p7 = document.getElementById('p7');
+	const p8 = document.getElementById('p8');
+	const p9 = document.getElementById('p9');
+	const p10 = document.getElementById('p10');
+    ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/9/0/90fcbb9d0f06496c73c03320e229d5b3_120x175.png" name = "Мстители" year = "2019"  />, p1);
+    ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/1/5/1538d8726d81dfc7ab875af380b81d3a_120x171.jpg" name = "Босс-молокосос" year = "2017"  />, p2);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/8/1/8170b709db3c289ec586d25f0339ead0_120x168.jpg" 	  name = "Смертельная зона" year = "2021"  />, p3);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/5/e/5e2c9bcfb0a8e5691b9d2dfb78bbccbb_120x180.jpg" 	  name = "В кольце времени" year = "2020"  />, p4);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/2/4/24a5851af14fe9dd43afdc1a384338f4_120x180.jpg" 	  name = "Довод" year = "2020"  />, p5);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/5/a/5abb8cb0d44ff5809eddee1fae5483a4_120x171.jpg" 	  name = "Союз зверей" year = "2019"  />, p6);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/4/e/4e805babd1d96e344c45df9134cf2c3d_120x171.jpg" 	  name = "Побег из Претории" year = "2020"  />, p7);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/4/2/4230d22b901ddb0cab0955270bb00886_120x157.jpg" 	  name = "Двойная рокировка" year = "2002"  />, p8);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/6/6/665d156aa74a969b48c20c2ff5cd31ef_120x174.jpg" 	  name = "Молчание ягнят" year = "1991"  />, p9);
+ReactDOM.render(<Film img = "https://oc.kg/media/thumbnails/6/4/644a22b1bfff65df3daded506fbba2b9_120x180.jpg" 	  name = "Проклятие ведьмы" year = "2020"  />, p10);
+</script>
+
+<div id="p1"  class = "film"></div>
+<div id="p2"  class = "film" ></div>
+<div id="p3"  class = "film" ></div>
+<div id="p4"  class = "film" ></div>
+<div id="p5"  class = "film" ></div>
+<div id="p6"  class = "film" ></div>
+<div id="p7"  class = "film" ></div>
+<div id="p8"  class = "film" ></div>
+<div id="p9"  class = "film" ></div>
+<div id="p10" class = "film" ></div>
+
+
