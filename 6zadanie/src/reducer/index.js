@@ -1,14 +1,13 @@
 import { ADD, REMOVE } from "../action/index";
 
-// https://github.com/reactjs/react-redux/blob/d5bf492ee35ad1be8ffd5fa6be689cd74df3b41e/src/components/createConnect.js#L91
 let initialState = {
   inventory: [
-    { fooditem: "Pasta Carbonara", price: 12.0 },
-    { fooditem: "Margherita Pizza", price: 27.0 },
-    { fooditem: "Mushroom Risotto", price: 16.0 },
-    { fooditem: "Panzenella", price: 10.0 },
-    { fooditem: "Bruschetta", price: 10.0 },
-    { fooditem: "Tiramisu", price: 6.0 }
+    { fooditem: "Hamburger", price: 80, src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1202&q=80" },
+    { fooditem: "Cheeseburger", price: 90,  src: "https://images.unsplash.com/photo-1534790566855-4cb788d389ec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" },
+    { fooditem: "Fries", price: 45,  src: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" },
+    { fooditem: "Coffee", price: 70,  src: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
+    { fooditem: "Tea", price: 50,  src: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"},
+    { fooditem: "Cola", price: 40,  src: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"}
   ],
   cart: [],
   total: [{ totalvalue: 0 }]
@@ -20,20 +19,17 @@ const todos = (state = initialState, action) => {
       let alreadyInCart = false;
       if (state.cart.length > 0) {
         state.cart = state.cart.map(cartitem => {
-          console.log(cartitem.fooditem + "\n" + action.item.fooditem);
           if (cartitem.fooditem === action.item.fooditem) {
-            console.log("hahahah");
             cartitem.qty += 1;
             alreadyInCart = true;
           }
           return cartitem;
         });
-
-        console.log(state.cart);
       }
 
       if (!alreadyInCart) {
         state.cart.push({
+          src: action.item.src,
           fooditem: action.item.fooditem,
           price: action.item.price,
           qty: 1
@@ -58,7 +54,6 @@ const todos = (state = initialState, action) => {
       if (index !== -1) {
         state.cart.splice(index, 1);
         //delete state.cart[index];
-        console.log(state.cart);
       }
       updateTotal(state);
       //apart from cart state all objects of state remains same
