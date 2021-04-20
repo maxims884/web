@@ -1,0 +1,7 @@
+.outer {
+    float: left; 
+    text-align: center;
+  }
+  .row {
+    display:list-item;
+  }
