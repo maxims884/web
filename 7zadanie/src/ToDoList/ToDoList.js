@@ -14,12 +14,10 @@ const ToDoList = (props) => {
   const Todo = (props) => {
     return(
       <div className ='raw'>
-      
-            {props.content.name}
-            {props.content.cost}
-
-        <button class="button" onClick={() => {props.onDelete(props.id)}}>Delete</button>
-      
+        {props.content.name}
+        {'_______________________'}
+        {props.content.cost  +'KGS'}
+      <button class="button" onClick={() => {props.onDelete(props.id)}}>Delete</button>
       </div>
     );
   }

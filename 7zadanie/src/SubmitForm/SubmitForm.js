@@ -1,15 +1,17 @@
 import React from 'react';
-
+import "./Form.css";
 class SubmitForm extends React.Component {
-    state = { term: {name:'',cost: 0},str:'',num:0};
+    state = { str:'',num:''};
   
     handleSubmit = (e) => {
       e.preventDefault();
       if(this.state.str === '') return;
       if(this.state.num === '') return;
-      this.state.term.name = this.state.str;
-      this.state.term.cost = this.state.num;
-      this.props.onFormSubmit(this.state.term);
+      var term = {name:'',cost:''};
+      term.name = this.state.str;
+      term.cost = this.state.num;
+      this.props.onFormSubmit(term);
+      //this.props.onFormSubmit(this.state.str);
       this.state.str = '';
       this.state.num = '';
     }
@@ -20,7 +22,7 @@ class SubmitForm extends React.Component {
           <input 
             type='text'
             className='input'
-            placeholder='Add new task'
+            placeholder='Add new item'
             value={this.state.str}
             onChange={(e) => this.setState({str: e.target.value})}
           />
@@ -38,4 +40,4 @@ class SubmitForm extends React.Component {
     }
   }
 
-  export default SubmitForm;
+  export default SubmitForm;  

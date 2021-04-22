@@ -23,7 +23,7 @@ class App extends Component {
   
     return(
         <div>
-          <Header numTodos={this.state.tasks.length} />
+          <Header  tasks={this.state.tasks} />
           <SubmitForm onFormSubmit={this.handleSubmit} />
           <TodoList tasks={this.state.tasks} onDelete={this.handleDelete} />
         </div>
