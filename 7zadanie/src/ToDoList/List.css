@@ -5,3 +5,31 @@
   .row {
     display:list-item;
   }
+
+  .todoList{
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .li{
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 0 15px;
+  }
+  .icon{
+    position: absolute;
+    right: -45px;
+    background: #e74c3c;
+    width: 45px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .li:hover .icon{
+    right: 0px;
+  }

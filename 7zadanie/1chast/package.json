@@ -1,0 +1,11 @@
+{
+	"name": "simple",
+	"version": "0.0.1",
+	"author": "Gladkov M.A.",
+	"scripts": {
+		"start": "node static-file-server.js"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
