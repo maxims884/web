@@ -10,7 +10,9 @@ class App extends Component {
   };
 
   handleSubmit = task => {
-    this.setState({tasks: [...this.state.tasks, task]});
+    //const newArr = [...this.state.tasks];
+    this.state.tasks.push(task);
+    this.setState({tasks: this.state.tasks});
   }
 
   handleDelete = (index) => {
