@@ -1,0 +1,47 @@
+.alert {
+    position: fixed;
+    z-index: 500;
+    background-color: red;
+    color:white;
+    width: 35%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 65%;
+    top: 70%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+  }
+  
+  .alert2 {
+    position: fixed;
+    z-index: 500;
+    background-color: red;
+    color:white;
+    width: 35%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 65%;
+    top: 62%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+  }
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ff9800;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: rgb(255, 2, 2);
+  }
