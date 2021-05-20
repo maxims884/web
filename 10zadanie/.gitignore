@@ -1,15 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/2 занятие/node_modules
-/3/node_modules
-/4zadanie/node_modules
-/5zadanie/node_modules
-/6zadanie/node_modules
-/7zadanie/node_modules
-/8zadanie/node_modules
-/9zadanie/node_modules
-/10zadanie/node_modules
+/node_modules
 /.pnp
 .pnp.js
 
